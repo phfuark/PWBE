@@ -17,5 +17,5 @@ Complexidade dos Algoritmos
    - Espaço: O(1)  
 
 5. Busca Binária  
-   - Tempo: O(\log n) (vai dividindo ao meio)  
+   - Tempo: O(log n) (vai dividindo ao meio)  
    - Espaço: O(1)  
