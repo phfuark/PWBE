@@ -18,4 +18,4 @@ class Carro:
 carro = Carro("Toyota", "Corolla")
 carro.acelerar(20)
 carro.frear(5)
-print(f"Velocidade atual do carro: {carro.elocidade()} km/h")
+print(f"Velocidade atual do carro: {carro.velocidade()} km/h")

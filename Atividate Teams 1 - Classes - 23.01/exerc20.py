@@ -42,18 +42,18 @@ class Rei(Peca):
     def roque_longo(self):
         print("Rei realizou o roque longo")
 
-if __name__ == "__main__":
-    p1 = Peao("branco")
-    t1 = Torre("preto")
-    r1 = Rei("branco")
-    ra1 = Rainha("branca")
 
-    p1.mover()
-    p1.atacar()
-    p1.en_passant()
+p1 = Peao("branco")
+t1 = Torre("preto")
+r1 = Rei("branco")
+ra1 = Rainha("branca")
+
+p1.mover()
+p1.atacar()
+p1.en_passant()
 
 
-    ra1.mover()
-    t1.mover()
-    r1.mover()
-    r1.roque_curto()
+ra1.mover()
+t1.mover()
+r1.mover()
+r1.roque_curto()
