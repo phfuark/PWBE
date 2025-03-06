@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Livros</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        a.add-link {
+            background-color: #28a745;
+            color: white;
+            margin-bottom: 20px;
+        }
+        a.add-link:hover {
+            background-color: #218838;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li a {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        li a.edit-link {
+            background-color: #007bff;
+            color: white;
+            margin-right: 10px;
+        }
+        li a.edit-link:hover {
+            background-color: #0056b3;
+        }
+        li a.delete-link {
+            background-color: #dc3545;
+            color: white;
+        }
+        li a.delete-link:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista de Livros</h2>
+    <a href="{% url 'book_create' %}" class="add-link">Adicionar Livro</a>
+    <ul>
+        {% for book in books %}
+            <li>
+                <span>{{ book.title }} - {{ book.author }} ({{ book.publication_year }})</span>
+                <span>
+                    <a href="{% url 'book_update' book.pk %}" class="edit-link">Editar</a>
+                    <a href="{% url 'book_delete' book.pk %}" class="delete-link">Excluir</a>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
