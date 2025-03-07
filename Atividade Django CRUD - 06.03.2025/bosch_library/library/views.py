@@ -3,8 +3,14 @@ from .models import Book
 from .forms import BookForm
 
 def book_list(request):
+    query = request.GET.get('q')
     books = Book.objects.all()
-    return render(request, 'library/book_list.html', {'books': books})
+    
+    if query:
+        books = books.filter(title__icontains=query)
+
+    return render(request, 'library/book_list.html', {'books': books, 'query': query})
+
 
 def book_create(request):
     if request.method == "POST":
